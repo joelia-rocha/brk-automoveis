@@ -1,15 +1,17 @@
 package web.brk.models;
 
 import java.io.Serializable;
-//import java.time.LocalDateTime;
-import java.util.UUID;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import lombok.Data;
 
@@ -22,7 +24,7 @@ public class UsuarioModel implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     //Identificadores únicos gerados automaticamente.
-    private UUID Id;
+    private Long idUsuario;
     //campo não pode ser vazio e o valor não pode ser duplicado
     @Column(nullable = false, unique = true) 
     private String nome;
@@ -38,7 +40,9 @@ public class UsuarioModel implements Serializable{
     private String senha;
     @Column(nullable = false, unique = true)
     private String telefone;
-    //private String listaCarros;
-    //private LocalDateTime registrationDate;
+    @OneToMany
+    @JsonBackReference
+    private List<AutomoveisModel> automoveis;
+
     
 }

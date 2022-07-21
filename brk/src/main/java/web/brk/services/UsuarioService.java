@@ -3,14 +3,18 @@ package web.brk.services;
 import web.brk.models.UsuarioModel;
 import web.brk.repositories.UsuarioRepository;
 
+import java.util.List;
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class UsuarioService {
     
-    //injeção dependencia de repository dentro aqui de service
+    //injeção dependencia de repository aqui dentro de service
     final UsuarioRepository usuarioRepository;
 
     public UsuarioService(UsuarioRepository usuarioRepository) {
@@ -30,7 +34,13 @@ public class UsuarioService {
         return usuarioRepository.existsByLogin(login);
     }
 
-    /*public boolean existsByLoginAndSenha(String login, String senha) {
-        return usuarioRepository.existsByLoginAndSenha(login, senha);
-    }*/
+    public List<UsuarioModel> findAll() {
+        return usuarioRepository.findAll();
+    }
+
+
+    public Optional<UsuarioModel> findById(Long idUsuario) {
+        return usuarioRepository.findById(idUsuario);
+    }
+    
 }

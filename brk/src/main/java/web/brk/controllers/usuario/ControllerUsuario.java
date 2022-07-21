@@ -1,7 +1,7 @@
 package web.brk.controllers.usuario;
 
-//import java.time.LocalDateTime;
-//import java.time.ZoneId;
+import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -10,9 +10,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,16 +42,25 @@ public class ControllerUsuario {
         if(usuarioService.existsByLogin(usuarioDto.getLogin())){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Login já existe.");
         }
-        /*if(usuarioService.existsByLoginAndSenha(usuarioDto.getLogin(), usuarioDto.getSenha())){
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Login ou senha inválidos.");
-        }*/
 
         var UsuarioModel = new UsuarioModel();
         BeanUtils.copyProperties(usuarioDto, UsuarioModel);
-        //UsuarioModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.save(UsuarioModel));
     }
 
+    @GetMapping
+    public ResponseEntity<List<UsuarioModel>> getAllUsuario(){
+        return ResponseEntity.status(HttpStatus.OK).body(usuarioService.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> getOneUsuario(@PathVariable(value = "id") Long idUsuario){
+        Optional<UsuarioModel> usuarioModelOptional = usuarioService.findById(idUsuario);
+        if(!usuarioModelOptional.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Login ou senha inválidos.");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(usuarioModelOptional.get());
+    }
 
 }
 
