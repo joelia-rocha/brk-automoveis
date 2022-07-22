@@ -33,6 +33,7 @@ public class ControllerUsuario {
         this.usuarioService = usuarioService;
     }
 
+    //Salvar informações do usuário com validação.
     @PostMapping
     public ResponseEntity<Object> saveUsuario(@RequestBody @Valid UsuarioDto usuarioDto){
         
@@ -48,11 +49,13 @@ public class ControllerUsuario {
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.save(UsuarioModel));
     }
 
+    //Receber lista de usuários cadastrados.
     @GetMapping
     public ResponseEntity<List<UsuarioModel>> getAllUsuario(){
         return ResponseEntity.status(HttpStatus.OK).body(usuarioService.findAll());
     }
 
+    //Pesquisar e validar usuário pelo id.
     @GetMapping("/{id}")
     public ResponseEntity<Object> getOneUsuario(@PathVariable(value = "id") Long idUsuario){
         Optional<UsuarioModel> usuarioModelOptional = usuarioService.findById(idUsuario);

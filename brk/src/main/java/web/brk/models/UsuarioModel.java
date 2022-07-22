@@ -23,9 +23,7 @@ public class UsuarioModel implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    //Identificadores únicos gerados automaticamente.
     private Long idUsuario;
-    //campo não pode ser vazio e o valor não pode ser duplicado
     @Column(nullable = false, unique = true) 
     private String nome;
     @Column(nullable = false, unique = true)

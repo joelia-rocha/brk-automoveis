@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UsuarioService {
     
-    //injeção dependencia de repository aqui dentro de service
+    //Injeção dependência de repositories aqui dentro de service.
     final UsuarioRepository usuarioRepository;
 
     public UsuarioService(UsuarioRepository usuarioRepository) {

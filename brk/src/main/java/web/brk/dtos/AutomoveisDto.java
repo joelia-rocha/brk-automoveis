@@ -4,6 +4,7 @@ import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
 
+//Campo para validação. Feito com spring boot validation.
 @Data
 public class AutomoveisDto {
 

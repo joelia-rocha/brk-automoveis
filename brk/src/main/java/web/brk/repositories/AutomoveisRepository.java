@@ -7,7 +7,5 @@ import web.brk.models.AutomoveisModel;
 
 @Repository
 public interface AutomoveisRepository extends JpaRepository<AutomoveisModel, Long>{
-
     boolean existsByPlacaCarro(String placaCarro);
-    
 }

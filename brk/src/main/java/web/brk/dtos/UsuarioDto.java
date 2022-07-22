@@ -6,11 +6,10 @@ import javax.validation.constraints.Size;
 
 import lombok.Data;
 
+//Campo para validação. Feito com spring boot validation
 @Data
-//(Dto = campo para validação)feito com spring boot validation
 public class UsuarioDto {
        
-    //não aceita campo nulo.
     @NotBlank
     private String nome;
     @NotBlank

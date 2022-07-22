@@ -31,8 +31,9 @@ public class ControllerAutomoveis {
         this.automoveisService = automoveisService;
     }
 
+    //Salvar e validar cadastros dos automoveis.
     @PostMapping
-    public ResponseEntity<Object> saveUsuario(@RequestBody @Valid AutomoveisDto automoveisDto){
+    public ResponseEntity<Object> saveAutomoveis(@RequestBody @Valid AutomoveisDto automoveisDto){
         
         if(automoveisService.existsByPlacaCarro(automoveisDto.getPlacaCarro())){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Placa já existe.");
@@ -43,8 +44,9 @@ public class ControllerAutomoveis {
         return ResponseEntity.status(HttpStatus.CREATED).body(automoveisService.save(AutomoveisModel));
     }
 
+    //Receber lista de automoveis cadastrados.
     @GetMapping
-    public ResponseEntity<List<AutomoveisModel>> getAllUsuario(){
+    public ResponseEntity<List<AutomoveisModel>> getAllAutomoveis(){
         return ResponseEntity.status(HttpStatus.OK).body(automoveisService.findAll());
     }
 

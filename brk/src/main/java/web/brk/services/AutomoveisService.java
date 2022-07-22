@@ -12,6 +12,7 @@ import web.brk.repositories.AutomoveisRepository;
 @Service
 public class AutomoveisService {
 
+    //Injeção dependência de repositories aqui dentro de service.
     final AutomoveisRepository automoveisRepository;
 
     public AutomoveisService(AutomoveisRepository automoveisRepository) {
