@@ -9,11 +9,12 @@
   <a href="#rotas-da-api">Rotas da API</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
-## 🚙 Sobre o teste  
+### 🚙 Sobre o Teste  
 
 Criar uma aplicação web de frotas onde o módulo a ser desenvolvido pelo programador é um CRUD de automóveis que contenha autenticação via login e senha, e que o usuário final consiga fazer o seu cadastro para acesso ao sistema.
 
-## Configuração do Projeto
+
+### Configuração do Projeto
 
 Visual Studio code para desenvolver a aplicação, Java 11, Spring Boot 2.7.2, Maven para gerenciamento de dependências, Insomnia para testar as requisições da API e MySQL Database para banco de dados.
 
@@ -31,4 +32,4 @@ Visual Studio code para desenvolver a aplicação, Java 11, Spring Boot 2.7.2, M
   - **Rota `/automoveis`**: GET - Retorna todo automóvel cadastrado na API.
   
 
-### Feito by Joélia Rocha 💙.
+ Feito by Joélia Rocha 💙.
