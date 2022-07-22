@@ -50,7 +50,7 @@ public class ControllerUsuario {
     }
 
     //Receber lista de usuários cadastrados.
-    @GetMapping
+    @GetMapping("/cadastrados")
     public ResponseEntity<List<UsuarioModel>> getAllUsuario(){
         return ResponseEntity.status(HttpStatus.OK).body(usuarioService.findAll());
     }
