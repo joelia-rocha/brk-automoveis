@@ -11,9 +11,7 @@
 
 ## 🚙 Sobre o teste  
 
-Criar uma aplicação web de frotas onde o módulo a ser desenvolvido pelo programador é um
-CRUD de automóveis que contenha autenticação via login e senha, e que o usuário final consiga
-fazer o seu cadastro para acesso ao sistema.
+Criar uma aplicação web de frotas onde o módulo a ser desenvolvido pelo programador é um CRUD de automóveis que contenha autenticação via login e senha, e que o usuário final consiga fazer o seu cadastro para acesso ao sistema.
 
 ## Configuração do Projeto
 
