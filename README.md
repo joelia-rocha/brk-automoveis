@@ -33,4 +33,7 @@ Visual Studio code para desenvolver a aplicação, Java 11, Spring Boot 2.7.2, M
   - **Rota `/automoveis`**: GET - Retorna todo automóvel cadastrado na API.
 
 Feito by Joélia Rocha.
+<<<<<<< HEAD
 
+=======
+>>>>>>> d988c80e38c797c933073a455e6e07ad954259de
