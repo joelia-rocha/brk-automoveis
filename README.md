@@ -1,5 +1,5 @@
 <h3 align="center">
-  Challenge: API REST Autenticação de automóveis
+  API REST Autenticação de automóveis
 </h3>
 <br>
 
