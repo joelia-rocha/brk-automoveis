@@ -31,7 +31,7 @@ public class ControllerAutomoveis {
         this.automoveisService = automoveisService;
     }
 
-    //Salvar e validar cadastros dos automoveis.
+    //Salvar e validar cadastros dos automóveis.
     @PostMapping
     public ResponseEntity<Object> saveAutomoveis(@RequestBody @Valid AutomoveisDto automoveisDto){
         
@@ -44,7 +44,7 @@ public class ControllerAutomoveis {
         return ResponseEntity.status(HttpStatus.CREATED).body(automoveisService.save(AutomoveisModel));
     }
 
-    //Receber lista de automoveis cadastrados.
+    //Receber lista de automóveis cadastrados.
     @GetMapping
     public ResponseEntity<List<AutomoveisModel>> getAllAutomoveis(){
         return ResponseEntity.status(HttpStatus.OK).body(automoveisService.findAll());
